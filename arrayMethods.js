@@ -18,14 +18,15 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 // CODE HERE
-const evenNumbers  = mixedNumbers.filter(function(e) {
+const evenNumbers = mixedNumbers.filter(function(e) {
   return e % 2 === 0
 })
 console.log(evenNumbers)
-//hello
+
 
 ////////// PROBLEM 2 //////////
-
+const evenNums = mixedNumbers.filter(num => num % 2 === 0)
+console.log(evenNums)
 // Do not edit the code below.
 const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 // Do not edit the code above.
@@ -41,10 +42,12 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 // CODE HERE
-// const postTaxPrices // = prices.map(/* Provide Your Callback Here );
-
-
-
+const postTaxPrices = prices.map(function(e) {
+  return e * 1.07
+});
+console.log(postTaxPrices)
+const postTax = prices.map(e => e * 1.07)
+console.log(postTax)
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
@@ -59,10 +62,13 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-// const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
-
-
-
+const totalPopulation = populations.reduce(function(a, c) {
+  return a + c
+})
+console.log(totalPopulation)
+ 
+const total = populations.reduce((a, c) => a + c)
+console.log(total)
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
@@ -84,8 +90,8 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-// const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
-
+const myStrongest = monstersInYourPocket.filter(monster => monster.CP > 200)
+console.log(myStrongest)
 
 
 ////////// PROBLEM 5 //////////
@@ -102,8 +108,8 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
-
-
+const totalOrders = orders.map(order => order.price + (order.price * order.tax))
+console.log(totalOrders)
 
 ////////// PROBLEM 6 //////////
 
@@ -122,3 +128,5 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+const bobsTotal = purchases.filter(purchase => purchase.owner === 'Bob') .reduce((acc, elem) => acc + elem.price, 0)
+console.log(bobsTotal)
